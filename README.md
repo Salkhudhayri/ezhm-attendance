@@ -1,13 +1,13 @@
-# Ezhm Shop — Time & Attendance
+# Ezhm — Time & Attendance
 
-The Time & Attendance web app for **Ezhm Shop**, with **multiple branches**, deployed for free on Vercel. A tablet at each branch entrance runs a kiosk screen for clock in/out and breaks; a separate admin area handles branches, employee management, corrections, and payroll reports.
+The Time & Attendance web app for **Ezhm** (ازهم), with **multiple branches**, deployed for free on Vercel. A tablet at each branch entrance runs a kiosk screen for clock in/out and breaks; a separate admin area handles branches, employee management, corrections, and payroll reports.
 
 This is a fully separate deployment: its own GitHub repo, Vercel project and Postgres database. It shares no data or credentials with any other business.
 
 ## Live deployment
 
-**App:** _(filled in after the first deploy)_
-**Admin login:** `/admin/login` — credentials are the Vercel project's `ADMIN_USERNAME`/`ADMIN_PASSWORD` environment variables.
+**App:** https://ezhm-shop.vercel.app
+**Admin login:** https://ezhm-shop.vercel.app/admin/login — credentials are the Vercel project's `ADMIN_USERNAME`/`ADMIN_PASSWORD` environment variables.
 
 ## Tech Stack
 
@@ -49,7 +49,7 @@ time-attendance-system/
 `server/routes/setup.js` exposes `POST /api/setup/migrate` and `POST /api/setup/seed`, gated by an `X-Setup-Key` header that must match the `ADMIN_PASSWORD` env var. This exists because the DB connection string is Sensitive (see above) and can only be used from inside the running deployment — so migration/seeding has to be triggered over HTTP rather than run locally with a pulled `.env`. Example:
 
 ```bash
-curl -X POST -H "X-Setup-Key: <your ADMIN_PASSWORD>" https://<your-deployment>.vercel.app/api/setup/seed
+curl -X POST -H "X-Setup-Key: <your ADMIN_PASSWORD>" https://ezhm-shop.vercel.app/api/setup/seed
 ```
 
 `/api/setup/seed` wipes everything and recreates the admin account plus two placeholder branches ("Branch 1", "Branch 2") with no staff. Once any attendance has been recorded it **refuses (HTTP 409)** unless you also send `X-Confirm-Wipe: yes`.
@@ -70,7 +70,7 @@ Then open **http://localhost:5173**.
 ## Starting data (as seeded)
 
 - **Admin:** username/password are `ADMIN_USERNAME`/`ADMIN_PASSWORD` from the Vercel project.
-- **Business name:** Ezhm Shop (Arabic: ازهم).
+- **Business name:** Ezhm (Arabic: ازهم).
 - **Branches:** "Branch 1" (الفرع 1) and "Branch 2" (الفرع 2), no location set. Rename them and set each location from Admin → Branches.
 - **Employees:** none. Add each one (name, PIN, role, monthly salary, branch) from Admin → Employees.
 

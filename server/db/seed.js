@@ -7,7 +7,7 @@ const { migrate } = require('./migrate');
 const { run } = require('./db');
 const { hashSecret } = require('../utils/auth');
 
-// Ezhm Shop starts with two placeholder branches (rename them from the admin
+// Ezhm starts with two placeholder branches (rename them from the admin
 // Branches page) and no staff: the owner adds each employee, PIN and salary from
 // Admin -> Employees. Zones are left NULL on purpose; set each branch's real
 // location from the Branches page ("Use My Current Location", standing there).
