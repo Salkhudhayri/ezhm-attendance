@@ -29,7 +29,6 @@ export default function AdminLayout() {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
             <Logo className="h-9" />
-            <span className="whitespace-nowrap text-xl font-bold text-slate-800">{t('appName')}</span>
           </div>
           <nav className="flex flex-wrap gap-1">
             {links.map((link) => (

@@ -185,9 +185,8 @@ export default function Kiosk() {
         <div className="flex items-center gap-4">
           <Logo className="h-14" />
           <div>
-            <h1 className="text-3xl font-bold text-slate-800">{t('appName')}</h1>
             {branchLabel && (
-              <p className="mt-1 text-slate-500">
+              <p className="text-lg text-slate-500">
                 {branchLabel}
                 <button type="button" onClick={clearBranch} className="ms-3 text-sm text-slate-400 underline">
                   {t('kiosk.changeBranch')}
