@@ -70,6 +70,7 @@ Then open **http://localhost:5173**.
 ## Starting data (as seeded)
 
 - **Admin:** username/password are `ADMIN_USERNAME`/`ADMIN_PASSWORD` from the Vercel project.
+- **Business name:** Ezhm Shop (Arabic: ازهم).
 - **Branches:** "Branch 1" (الفرع 1) and "Branch 2" (الفرع 2), no location set. Rename them and set each location from Admin → Branches.
 - **Employees:** none. Add each one (name, PIN, role, monthly salary, branch) from Admin → Employees.
 
