@@ -1,0 +1,19 @@
+{
+  "name": "time-attendance-system",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Time & Attendance System for a small retail shop",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "start": "concurrently -k -n SERVER,CLIENT -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "migrate": "npm run migrate -w server",
+    "seed": "npm run seed -w server",
+    "build": "npm run build -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
